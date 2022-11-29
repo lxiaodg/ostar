@@ -1,0 +1,15 @@
+./scripts/feeds update -a
+./scripts/feeds install luci-base
+./scripts/feeds install luci-lib-base
+./scripts/feeds install luci-compat
+./scripts/feeds install luci-mod-status
+./scripts/feeds install luci-mod-system
+./scripts/feeds install luci-proto-ipv6
+./scripts/feeds install luci-app-firewal
+./scripts/feeds install luci-i18n-firewall-zh-cn
+./scripts/feeds install stm32flash
+./scripts/feeds install -a -pmmdvm
+./scripts/feeds luci-mod-admin-full
+cp config.mt76x8 .config
+make menuconfig
+make -j4
